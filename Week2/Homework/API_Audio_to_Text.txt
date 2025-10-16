@@ -1,0 +1,8 @@
+
+
+{
+    "text": " Hello, I am recording this voice to test AA capability to check if it can convert my voice and transcribe it into a text format.",
+    "x_groq": {
+        "id": "req_01k7q12rd9egdswwwce8an3qnq"
+    }
+}

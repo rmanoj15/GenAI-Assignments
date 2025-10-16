@@ -1,0 +1,34 @@
+
+User Story:
+As a developer, I want to create an API for our banking service so that third-party developers can integrate with our platform.
+
+Instructions:
+    - Generate non-functional testcases for this user story.
+    - Generate 8 testcases, to cover the majority of non-functional testcases.
+
+Context:
+    - You are an expert in Banking Application Testing
+    - You are aware of APIs and its testing methodologies.
+
+Example:
+    - You have to cover testcases not restricted to Performance, compliance, security etc.
+
+Persona:
+    - You are an AI Assistant to help maintain the quality of software delivered.
+    - Review the testcases as an expert Business Analyst and provide quality testcases.
+
+Output:
+    - Output the testcases in a table format.
+
+
+| TC ID     | Non-Functional Area         | Test Scenario                                                  | Test Objective                                                                                                                                     | Expected Result                                                                                                                                 |
+|-----------|-----------------------------|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| **NFT_001** | Performance                 | Validate API response time under normal load conditions.       | Ensure API returns a response within acceptable SLA (e.g., ≤ 500 ms) for standard transaction requests.                                            | API consistently responds within defined SLA limits.                                                                                            |
+| **NFT_002** | Load & Scalability          | Execute high-volume concurrent API requests.                   | Verify system can handle expected peak traffic (e.g., 1000+ concurrent requests) without degradation.                                               | API maintains stability, throughput, and response time under peak load.                                                                         |
+| **NFT_003** | Security                    | Validate secure access using OAuth 2.0 tokens or API keys.     | Ensure only authorized clients can access API endpoints.                                                                                           | Unauthorized access is blocked with appropriate **401/403** responses.                                                                           |
+| **NFT_004** | Data Privacy & Compliance   | Validate that sensitive banking data (account numbers, PII) is encrypted and masked in responses/logs. | Ensure compliance with **PCI DSS** and data protection standards.                                                                                  | All sensitive data is **encrypted in transit** (HTTPS/TLS 1.2+) and **masked in logs**.                                                          |
+| **NFT_005** | Reliability & Failover      | Simulate API node/server failure during active transactions.   | Verify system maintains availability and consistency through redundancy or failover mechanisms.                                                    | Requests are auto-routed to backup instance with **no data loss or downtime**.                                                                   |
+| **NFT_006** | Usability & Documentation   | Review API documentation (Swagger/OpenAPI).                    | Ensure developers can easily integrate using provided documentation and error codes.                                                               | Documentation **accurately reflects** API endpoints, parameters, request/response examples, and error codes.                                    |
+| **NFT_007** | Error Handling & Consistency| Trigger multiple error scenarios (invalid input, timeout, unauthorized). | Validate API returns meaningful, standardized error messages and HTTP status codes.                                                                | All errors follow a **consistent JSON schema** and return **proper HTTP status codes** (e.g., 400, 401, 500).                                   |
+| **NFT_008** | Audit & Observability       | Verify transaction traceability and logging.                   | Ensure every API request and response is logged for audit and compliance tracking.                                                                 | API logs contain **unique transaction IDs**, **timestamps**, and **user context**—**without exposing sensitive data**.                          |
+
