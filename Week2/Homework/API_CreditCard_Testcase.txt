@@ -1,0 +1,75 @@
+{
+  "model": "llama-3.3-70b-versatile",
+  "messages": [
+    {
+      "role": "user",
+      "content": "- Generate testdata for testing Credit cards, in India\n- Generate testdata to cover different types of payment networks not restricted to visa and mastercard.\n- Create testdata to include various banks and its varients\n- Include information like firstname, lastname, valid from, valid thru, cvv\n- Generate a total of 12 test data."
+    },
+    {
+      "role": "system",
+      "content": "- You are an expert in Indian Credit card Testing."
+    },
+    {
+      "role": "assistant",
+      "content": "- Output the testcases in a table format"
+    }
+    
+  ]
+}
+
+Response:
+
+{
+    "id": "chatcmpl-ab547111-88d7-4b60-8562-1d418eb2e8c6",
+    "object": "chat.completion",
+    "created": 1760639225,
+    "model": "llama-3.3-70b-versatile",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": ".\n\nHere are 12 test data for Indian credit cards, covering different payment networks, banks, and variants:\n\n| **Card Number** | **Payment Network** | **Bank** | **Firstname** | **Lastname** | **Valid From** | **Valid Thru** | **CVV** |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| 4111 1111 1111 1111 | Visa | HDFC Bank | Rohan | Sharma | 02/2022 | 02/2025 | 123 |\n| 5105 1051 0510 5100 | Mastercard | ICICI Bank | Aarav | Jain | 05/2021 | 05/2024 | 456 |\n| 3714 4963 5398 431 | American Express | Axis Bank | Kiara | Patel | 08/2020 | 08/2023 | 789 |\n| 6011 6011 6011 6611 | Discover | Kotak Mahindra Bank | Kabir | Singh | 11/2021 | 11/2024 | 901 |\n| 3530 1111 1111 1111 | JCB | Yes Bank | Zara | Khan | 03/2022 | 03/2025 | 234 |\n| 6771 1111 1111 1111 | Maestro | Bank of India | Arjun | Reddy | 06/2021 | 06/2024 | 567 |\n| 4485 1111 1111 1111 | Visa | SBI Card | Saanvi | Gupta | 09/2020 | 09/2023 | 890 |\n| 5196 1111 1111 1111 | Mastercard | IndusInd Bank | Vihaan | Mehta | 01/2022 | 01/2025 | 345 |\n| 6334 1111 1111 1111 | Diners Club | HSBC Bank | Aisha | Sharma | 04/2021 | 04/2024 | 678 |\n| 4916 1111 1111 1111 | Visa | Punjab National Bank | Siddharth | Kumar | 07/2020 | 07/2023 | 123 |\n| 6271 1111 1111 1111 | RuPay | Canara Bank | Shanvi | Rao | 10/2021 | 10/2024 | 456 |\n| 6371 1111 1111 1111 | UnionPay | Oriental Bank of Commerce | Raghav | Verma | 02/2022 | 02/2025 | 789 |\n\nPlease note that these are fictional test data and should not be used for actual transactions. The card numbers, names, and other details are generated randomly and do not correspond to real individuals or accounts."
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "queue_time": 0.05589858,
+        "prompt_tokens": 126,
+        "prompt_time": 0.00642513,
+        "completion_tokens": 618,
+        "completion_time": 1.551186934,
+        "total_tokens": 744,
+        "total_time": 1.557612064
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_34d416ee39",
+    "x_groq": {
+        "id": "req_01k7q4d2b1eq6sprzexbnt57za"
+    },
+    "service_tier": "on_demand"
+}
+
+
+Output Formatted :
+
+Certainly! Here's your content beautifully formatted with improved readability, consistent styling, and clear structure:
+
+
+| Card Number             | Payment Network   | Bank                   | First Name | Last Name | Valid From | Valid Thru | CVV |
+|------------------------|-------------------|------------------------|------------|-----------|------------|------------|-----|
+| `4111 1111 1111 1111`  | Visa              | HDFC Bank              | Rohan      | Sharma    | 02/2022    | 02/2025    | 123 |
+| `5105 1051 0510 5100`  | Mastercard        | ICICI Bank             | Aarav      | Jain      | 05/2021    | 05/2024    | 456 |
+| `3714 4963 5398 431`   | American Express  | Axis Bank              | Kiara      | Patel     | 08/2020    | 08/2023    | 789 |
+| `6011 6011 6011 6611`  | Discover          | Kotak Mahindra Bank    | Kabir      | Singh     | 11/2021    | 11/2024    | 901 |
+| `3530 1111 1111 1111`  | JCB               | Yes Bank               | Zara       | Khan      | 03/2022    | 03/2025    | 234 |
+| `6771 1111 1111 1111`  | Maestro           | Bank of India          | Arjun      | Reddy     | 06/2021    | 06/2024    | 567 |
+| `4485 1111 1111 1111`  | Visa              | SBI Card               | Saanvi     | Gupta     | 09/2020    | 09/2023    | 890 |
+| `5196 1111 1111 1111`  | Mastercard        | IndusInd Bank          | Vihaan     | Mehta     | 01/2022    | 01/2025    | 345 |
+| `6334 1111 1111 1111`  | Diners Club       | HSBC Bank              | Aisha      | Sharma    | 04/2021    | 04/2024    | 678 |
+| `4916 1111 1111 1111`  | Visa              | Punjab National Bank   | Siddharth  | Kumar     | 07/2020    | 07/2023    | 123 |
+| `6271 1111 1111 1111`  | RuPay             | Canara Bank            | Shanvi     | Rao       | 10/2021    | 10/2024    | 456 |
+| `6371 1111 1111 1111`  | UnionPay          | Oriental Bank of Commerce | Raghav  | Verma     | 02/2022    | 02/2025    | 789 |
+

@@ -1,0 +1,71 @@
+Request:
+
+{
+  "model": "llama-3.3-70b-versatile",
+  "messages": [
+    {
+      "role": "user",
+      "content": "User Story:\nAs a developer, I want to create an API for our banking service so that third-party developers can integrate with our platform.\n\nInstructions:\n    - Generate non-functional testcases for this user story.\n    - Generate 8 testcases, to cover the majority of non-functional testcases."
+    },
+    {
+      "role": "system",
+      "content": "- You are an expert in Banking Application Testing\n    - You are aware of APIs and its testing methodologies."
+    },
+    {
+      "role": "assistant",
+      "content": "- Output the testcases in a table format"
+    }
+  ],
+  "temperature": 0.1
+}
+
+
+Response:
+
+{
+    "id": "chatcmpl-20b130a8-f875-4fc2-9789-b76c7b54ef59",
+    "object": "chat.completion",
+    "created": 1760639617,
+    "model": "llama-3.3-70b-versatile",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": ".\n\nHere are 8 non-functional testcases for the API:\n\n| Testcase ID | Testcase Description | Expected Result |\n| --- | --- | --- |\n| NF-001 | **Performance Test**: Test the API's response time under a normal load of 100 concurrent users. | The API should respond within 2 seconds for 90% of the requests. |\n| NF-002 | **Security Test**: Test the API's vulnerability to SQL injection attacks by sending malicious input. | The API should prevent SQL injection attacks and return an error message. |\n| NF-003 | **Scalability Test**: Test the API's ability to handle a large number of concurrent users (1000+) without a significant decrease in performance. | The API should be able to handle the increased load without a decrease in performance of more than 20%. |\n| NF-004 | **Availability Test**: Test the API's uptime and availability over a 24-hour period. | The API should be available for at least 99.9% of the time. |\n| NF-005 | **Usability Test**: Test the API's documentation and ease of use for third-party developers. | The API documentation should be clear and concise, and developers should be able to integrate with the API within 2 hours. |\n| NF-006 | **Reliability Test**: Test the API's ability to recover from failures and exceptions. | The API should be able to recover from failures and exceptions within 5 minutes. |\n| NF-007 | **Compliance Test**: Test the API's compliance with relevant banking regulations (e.g. PCI-DSS, GDPR). | The API should comply with all relevant banking regulations. |\n| NF-008 | **Load Test**: Test the API's ability to handle a large volume of requests (1000+ requests per second) without a significant decrease in performance. | The API should be able to handle the increased load without a decrease in performance of more than 30%. |\n\nThese testcases cover a range of non-functional requirements, including performance, security, scalability, availability, usability, reliability, compliance, and load testing. By passing these testcases, the API can ensure that it meets the required standards for third-party developers to integrate with the platform."
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "queue_time": 0.05186313,
+        "prompt_tokens": 126,
+        "prompt_time": 0.006572266,
+        "completion_tokens": 460,
+        "completion_time": 1.131785322,
+        "total_tokens": 586,
+        "total_time": 1.138357588
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_34d416ee39",
+    "x_groq": {
+        "id": "req_01k7q4s1k2fk7s5bjc4xd62bsa"
+    },
+    "service_tier": "on_demand"
+}
+
+Formatted output:
+
+
+| Test Case ID | Test Case Description | Expected Result |
+| :--- | :--- | :--- |
+| **NF-001** | **Performance Test**<br>Test the API's response time under a normal load of 100 concurrent users. | The API should respond within 2 seconds for 90% of the requests. |
+| **NF-002** | **Security Test**<br>Test the API's vulnerability to SQL injection attacks by sending malicious input. | The API should prevent SQL injection attacks and return an appropriate error message without data compromise. |
+| **NF-003** | **Scalability Test**<br>Test the API's ability to handle a large number of concurrent users (1000+) without a significant decrease in performance. | The API should handle the increased load without a performance degradation of more than 20%. |
+| **NF-004** | **Availability Test**<br>Test the API's uptime and availability over a 24-hour period. | The API should be available for at least 99.9% of the time. |
+| **NF-005** | **Usability Test**<br>Test the API's documentation and ease of use for third-party developers. | The documentation should be clear and concise, enabling developers to successfully integrate with the API within 2 hours. |
+| **NF-006** | **Reliability Test**<br>Test the API's ability to recover from failures and exceptions. | The API should automatically recover from failures and exceptions within 5 minutes. |
+| **NF-007** | **Compliance Test**<br>Test the API's compliance with relevant banking regulations (e.g., PCI-DSS, GDPR). | The API must comply with all relevant banking regulations, with no critical violations found. |
+| **NF-008** | **Load Test**<br>Test the API's ability to handle a large volume of requests (1000+ requests per second) without a significant decrease in performance. | The API should handle the increased load without a performance degradation of more than 30%. |
+
