@@ -1,0 +1,160 @@
+
+
+Instructions:
+Generate Playwright typescript code for the below Selenium Java code
+Strictly only code and no comments
+
+package week2.day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
+
+/**
+ * This class automates a Flipkart product search using Selenium and TestNG.
+ * It searches for "iPhone17" in the Flipkart search bar and submits the query.
+ * 
+ * @author Mano
+ */
+public class FlipkartSearchTest {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    /**
+     * Sets up ChromeDriver, opens Flipkart, and maximizes the browser window.
+     */
+    @BeforeMethod
+    public void setupBrowser() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.flipkart.com/");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    /**
+     * Searches for "iPhone17" in Flipkart's search bar and triggers the search.
+     */
+    @Test
+    public void searchForIphone17() {
+        WebElement searchBox = wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.xpath("//input[@name='q' and @title='Search for Products, Brands and More']")));
+        searchBox.sendKeys("iPhone17");
+
+        WebElement searchButton = wait.until(ExpectedConditions
+                .elementToBeClickable(By.xpath("//button[@type='submit' and @title='Search for Products, Brands and More']")));
+        searchButton.click();
+    }
+
+    /**
+     * Closes the browser after the test execution.
+     */
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}
+
+Context:
+
+You are an AI Assistant who is expert on Selenium Java and Playwright.
+
+
+
+Example:
+
+Converted to Playwright script
+
+import { test, expect } from '@playwright/test';
+
+test('get started link', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'Get started' }).click();
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+});
+
+Sample Java selenium code:
+
+package week2.day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
+
+/**
+ * This class automates navigation to the Playwright website and verifies
+ * the Installation heading after clicking the "Get started" link.
+ * 
+ * Author: Mano
+ */
+public class PlaywrightGetStartedTest {
+
+    public static void main(String[] args) {
+
+        // Setup ChromeDriver
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        // Create Explicit Wait
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // Navigate to Playwright website
+        driver.get("https://playwright.dev/");
+
+        // Click on "Get started" link
+        WebElement getStartedLink = wait.until(
+                ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Get started']")));
+        getStartedLink.click();
+
+        // Verify the "Installation" heading is visible
+        WebElement installationHeading = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[normalize-space()='Installation']")));
+
+        if (installationHeading.isDisplayed()) {
+            System.out.println("Test Passed: 'Installation' heading is visible.");
+        } else {
+            System.out.println("Test Failed: 'Installation' heading is not visible.");
+        }
+
+        // Close browser
+        driver.quit();
+    }
+}
+
+
+---------output----------
+
+import { test, expect } from '@playwright/test';
+
+test('Flipkart search for iPhone17', async ({ page }) => {
+  await page.goto('https://www.flipkart.com/');
+  const searchBox = page.locator("//input[@name='q' and @title='Search for Products, Brands and More']");
+  await searchBox.waitFor({ state: 'visible' });
+  await searchBox.fill('iPhone17');
+  const searchButton = page.locator("//button[@type='submit' and @title='Search for Products, Brands and More']");
+  await searchButton.waitFor({ state: 'visible' });
+  await searchButton.click();
+});
