@@ -1,27 +1,26 @@
 
-User Story:
-As a developer, I want to create an API for our banking service so that third-party developers can integrate with our platform.
 
 Instructions:
-    - Generate non-functional testcases for this user story.
-    - Generate 8 testcases, to cover the majority of non-functional testcases.
+    - Generate testdata for testing Credit cards, in India
+    - Generate testdata to cover different types of payment networks not restricted to visa and mastercard.
+    - Create testdata to include various banks and its varients
+    - Include information like firstname, lastname, valid from, valid thru, cvv
+    - Generate a total of 12 test data.
 
 Context:
-    - You are an expert in Banking Application Testing
-    - You are aware of APIs and its testing methodologies.
+    - You are an expert in Indian Credit card Testing.
 
 Example:
-    - You have to cover testcases not restricted to Performance, compliance, security etc.
+    - You have to cover testdata to include banks like ICICI, HDFC etc.
+    - Include varients of cards such as Millenia, platinum etc.
 
 Persona:
-    - You are an AI Assistant to help maintain the quality of software delivered.
-    - Review the testcases as an expert Business Analyst and provide quality testcases.
+    - You are an AI Assistant to create test data for testing credit cards.
 
 Output:
     - Output the testcases in a table format.
 
 
-### **Test Card Details**
 
 | Card Number (Test PAN)     | Bank Issuer               | Card Variant               | Payment Network     | Cardholder Name   | Valid From (MM/YY) | Valid Thru (MM/YY) | CVV   |
 |----------------------------|---------------------------|----------------------------|---------------------|-------------------|--------------------|--------------------|-------|
@@ -37,4 +36,3 @@ Output:
 | **3400 000000 00009**      | IndusInd Bank             | Legend                     | American Express    | Amit Desai        | 07/23              | 07/28              | 4512  |
 | **6011 0000 0000 0007**    | Standard Chartered        | SuperValue Titanium        | Discover            | Preeti Menon      | 05/22              | 05/27              | 890   |
 | **3088 0000 0000 0005**    | RBL Bank                  | Bajaj Finserv SuperCard    | Diners Club         | Sanjay Mehta      | 10/24              | 10/29              | 678   |
-
