@@ -4,43 +4,83 @@
 export const DEFAULT_PROMPTS = {
  
   /**
-   * Selenium Java Page Object Prompt (No Test Class)
-   */
+ * Selenium Java Page Object Prompt (ICEPOT – No Test Class)
+ */
   SELENIUM_JAVA_PAGE_ONLY: `
-    Instructions:
-    - Generate ONLY a Selenium Java Page Object Class (no test code).
-    - Add JavaDoc for methods & class.
-    - Use Selenium 2.30+ compatible imports.
-    - Use meaningful method names.
-    - Do NOT include explanations or test code.
+    I — INSTRUCTIONS
+    You are a code generator specialized in the TestLeaf Selenium framework.
+    Generate exactly one **Java Page Object class** that complies with the in-house conventions.
 
-    Context:
+    HARD CONSTRAINTS
+    - Output ONLY one Java Page Object class.
+    - Package: com.leaftaps.pages
+    - Class MUST extend: com.framework.testng.api.base.ProjectSpecificMethods
+    - Use ONLY these wrappers:
+      locateElement(Locators.*, ...), clearAndType(...), click(...),
+      selectDropDownUsingText(...), selectDropDownUsingValue(...),
+      verifyExactText(...), verifyPartialText(...), reportStep(...)
+    - Do NOT import or use: WebDriver, By, WebElement, new Select(...)
+    - Locator enum usage limited to: Locators.ID, Locators.NAME, Locators.LINK_TEXT, Locators.XPATH
+    - Fluent API: return \`this\` for setters; return destination page objects for navigations
+    - Include JavaDoc for each public method with @param and @return
+    - Enclose the final answer in a single \`\`\`java code fence — no extra prose
+
+    C — CONTEXT
+    You will receive an HTML DOM snippet for a form/page. Prefer stable attributes (id/name).
+    Map fields and controls to the allowed Locators.* consistently. Dropdowns must use
+    \`selectDropDownUsingText\` or \`selectDropDownUsingValue\` (no sendKeys to <select>).
+
+    E — EXAMPLE (Style Only; do not copy names blindly)
+    \\\`\\\`\\\`java
+    package com.leaftaps.pages;
+
+    import com.framework.selenium.api.design.Locators;
+    import com.framework.testng.api.base.ProjectSpecificMethods;
+
+    /**
+     * Example style for wrapper usage.
+     */
+    public class ExamplePage extends ProjectSpecificMethods {
+
+        /**
+         * Type into a field by id.
+         * @param value input text
+         * @return this page
+         */
+        public ExamplePage typeSample(String value) {
+            clearAndType(locateElement(Locators.ID, "sampleId"), value);
+            reportStep("Typed sample: " + value, "pass");
+            return this;
+        }
+
+        /**
+         * Click a button by xpath.
+         * @return this page
+         */
+        public ExamplePage clickSampleButton() {
+            click(locateElement(Locators.XPATH, "//button[@id='sampleBtn']"));
+            reportStep("Clicked sample button", "pass");
+            return this;
+        }
+    }
+    \\\`\\\`\\\`
+
+    P — PERSONA
+    Act as a senior TestLeaf framework engineer. Write clean, production-grade, enterprise code.
+
+    O — OUTPUT FORMAT
+    - Output must be a single Java class inside one \`\\\`\\\`java\` fence.
+    - Include package/imports, class signature, wrapper-based interactions, JavaDocs.
+    - No explanations, comments, or text outside the code fence.
+
+    T — TONE
+    Formal, concise, strict to standards.
+
     DOM:
     \`\`\`html
     \${domContent}
     \`\`\`
-
-    Example:
-    \`\`\`java
-    package com.testleaf.pages;
-
-    /**
-     * Page Object for Component Page
-     */
-    public class ComponentPage {
-        // Add methods as per the DOM
-    }
-    \`\`\`
-
-    Persona:
-    - Audience: Automation engineer focusing on maintainable POM structure.
-
-    Output Format:
-    - A single Java class inside a \`\`\`java\`\`\` block.
-
-    Tone:
-    - Clean, maintainable, enterprise-ready.
-  `,
+      `,
 
   /**
    * Cucumber Feature File Only Prompt

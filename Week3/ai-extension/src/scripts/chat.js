@@ -585,14 +585,14 @@ class ChatUI {
                 promptKeys.push('CUCUMBER_ONLY');
                 this.addUnsupportedLanguageMessage(lang, eng);
             } else {
-                // For other non-Java/Selenium combinations, generate separately
+                // For non-Java/Selenium combinations, generate separately
                 promptKeys.push('CUCUMBER_ONLY');
                 this.addUnsupportedLanguageMessage(lang, eng);
             }
         } else if (isFeatureChecked) {
             // Feature file only
             promptKeys.push('CUCUMBER_ONLY');
-        
+
         }
          else if (isTestDataChecked) {
             // Feature file only
@@ -633,7 +633,7 @@ class ChatUI {
     isTypeScriptPlaywright(language, engine) {
         return language === 'ts' && engine === 'playwright';
     }
-
+    
     // typescript/selenium not supported by the selenium webdriver
 
 
