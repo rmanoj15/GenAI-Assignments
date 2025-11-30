@@ -1,0 +1,21 @@
+{
+  "name": "resume_vector_index",
+  "database": "db_resumes",
+  "collection": "resumes",
+  "definition": {
+    "mappings": {
+      "dynamic": false,
+      "fields": {
+        "embedding": {
+          "type": "knnVector",
+          "dimensions": 1024,
+          "similarity": "cosine"
+        },
+        "text": { "type": "string" },
+        "skills": { "type": "string" },
+        "role": { "type": "string" },
+        "location": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+PORT=3000
+NODE_ENV=development
+MONGODB_DB=db_resumes
+MISTRAL_API_KEY=GkcYdN6LSOiFfQ33n3DP7sbHoxivDrec
+GROQ_API_KEY=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
+GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
+EMBEDDING_MODEL=mistral-embed
+LLM_MODEL=llama-3.3-70b-versatile
+LOG_LEVEL=info
+
+
+# MongoDB connection string (use a secure secret storage in prod)
+MONGODB_URI=mongodb+srv://rmanoj_db_user:esvIzmjaXJl6BUl8@cluster0.rfuyvfl.mongodb.net/?appName=Cluster0
+MONGODB_COLLECTION=resumes
+MONGODB_VECTOR_INDEX=resume_vector_index
+MONGODB_BM25_INDEX=BM25_index
+
+
+
+
+GROQ_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
+
+EMBEDDING_DIM=1024
+# LLM_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
+
+MAX_REQUEST_BODY_BYTES=1048576
